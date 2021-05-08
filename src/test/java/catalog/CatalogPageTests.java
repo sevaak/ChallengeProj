@@ -18,8 +18,5 @@ public class CatalogPageTests extends BaseTest {
 
     }
 
-//    @Test
-//    public void searchedResultsTest(){
-//        catalogPage.getSearchedResults();
-//    }
+
 }
