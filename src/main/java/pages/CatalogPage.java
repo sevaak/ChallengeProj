@@ -12,9 +12,10 @@ import java.util.stream.Collectors;
 
 public class CatalogPage {
     public WebDriver driver;
-    public By searchInput = By.tagName("input");
+    public By searchInput = By.xpath("//input[@id='catalog-search-input']");
     public By title = By.tagName("h1");
     public By javaTitle = By.tagName("h2");
+    public By resultTitle=By.xpath("//b[contains(text(),'Results (91)')]");
 
 
     public CatalogPage(WebDriver driver) {
@@ -34,7 +35,6 @@ public class CatalogPage {
             if (listOfElements.get(i).getText().contains("Java")) {
                 list.add(listOfElements.get(i).getText());
             }
-
             for (int j = 0; j < list.size(); j++) {
                 System.out.println(list);
             }
@@ -44,6 +44,10 @@ public class CatalogPage {
     public String getTitleText() {
 
         return driver.findElement(title).getText();
+    }
+
+    public String getResultTitle(){
+        return driver.findElement(resultTitle).getText();
     }
 
 
